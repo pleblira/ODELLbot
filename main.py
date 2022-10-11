@@ -8,23 +8,19 @@ ENV_FILE = find_dotenv()
 if ENV_FILE:
     load_dotenv(ENV_FILE)
 
-
 main_message = "good morning, stay humble and stack sats"
 
 alternate_message_list = ["good morning, we will win","good morning if you do not stand up for yourself nobody else will","good morning bitcoin represents hope to millions who need better money","good morning our house is on fire and corrupt politicians want to block the exit","good morning bitcoin represents hope to millions who need better money","good morning, if you do not stay humble bitcoin will humble you","good morning if you cannot spend your bitcoin without permission then it is not your bitcoin","good morning every time you use a credit card you are providing intimate financial and location data to your provider and their partners","good morning prepared bitcoiners are stronger than complacent cuckcoiners","good morning investment real estate is a shitcoin","good morning, stay humble, stack sats, and learn bitcoin privacy best practices","good morning, stay humble, stack sats, and learn how to use bitcoin"]
 
 
-draw_if_main_or_alternate_message = random.randint(1,4)
-print(draw_if_main_or_alternate_message)
-if draw_if_main_or_alternate_message == 1:
-    tweet_message = alternate_message_list[random.randint(1,len(alternate_message_list)-1)]
-else:
-    tweet_message = main_message
-
-
-
-
 def tweepy_send_tweet_automated(tweet_message):
+    draw_if_main_or_alternate_message = random.randint(1,4)
+    print(draw_if_main_or_alternate_message)
+    if draw_if_main_or_alternate_message == 1:
+        tweet_message = alternate_message_list[random.randint(1,len(alternate_message_list)-1)]
+    else:
+        tweet_message = main_message
+        
     consumer_key = os.environ.get("CONSUMER_KEY")
     consumer_secret = os.environ.get("CONSUMER_SECRET")
     access_token = os.environ.get("ACCESS_TOKEN")
