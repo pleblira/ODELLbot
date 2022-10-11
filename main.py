@@ -19,10 +19,11 @@ def tweepy_send_tweet(tweet_message,tweet_image):
     auth = tweepy.OAuth1UserHandler(consumer_key, consumer_secret, access_token, access_token_secret)
 
     api = tweepy.API(auth)
-    api.update_status_with_media(tweet_message, tweet_image)
+    api.update_status(tweet_message)
 
 
 
 
 if __name__ == '__main__':
     tweepy_send_tweet(tweet_message)
+
