@@ -35,10 +35,10 @@ def tweepy_send_tweet_automated():
 if __name__ == '__main__':
     scheduler = BlockingScheduler()
     scheduler.add_job(tweepy_send_tweet_automated, 'cron', hour=9, minute=00, timezone="America/New_York")
-    print('Press Ctrl+{0} to stop scheduler and switch to manual tweet.'.format('Break' if os.name == 'nt' else 'C'))
+    print('Press Ctrl+{0} to stop scheduler.'.format('Break' if os.name == 'nt' else 'C'))
 
     try:
         scheduler.start()
     except (KeyboardInterrupt, SystemExit):
-        print("\nScheduler stopped. Starting manual tweet functionality.\n\n")
+        print("\nScheduler stopped.\n\n")
         pass
