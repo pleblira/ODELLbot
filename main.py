@@ -14,7 +14,7 @@ alternate_message_list = ["good morning, we will win","good morning if you do no
 
 
 def tweepy_send_tweet_automated():
-    draw_if_main_or_alternate_message = random.randint(1,4)
+    draw_if_main_or_alternate_message = random.randint(1,5)
     print(draw_if_main_or_alternate_message)
     if draw_if_main_or_alternate_message == 1:
         tweet_message = alternate_message_list[random.randint(1,len(alternate_message_list)-1)]
